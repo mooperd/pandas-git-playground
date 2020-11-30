@@ -6,6 +6,7 @@ pd.set_option('display.max_rows', None)
 dataframe = pd.read_csv("git-log-2020.csv")
 dataframe['date'] = pd.to_datetime(dataframe['date'])
 
+# function that runs per group
 def my_function(row):
     print("hello")
     return row['email'].value_counts().sort_values(ascending = False).head(3)
